@@ -1,0 +1,99 @@
+body {
+    font-family: Varela, Arial, Helvetica, sans-serif;
+    margin: 0;
+    
+}
+header {
+    display: grid;
+    background-color: red;
+}
+.nav-wrapper{
+    grid-row: 2;
+    margin-top: -50px;
+    z-index: 2;
+    border-bottom: 1px solid red;
+}
+#logo {
+   
+    text-align: center;
+    margin: 10px;
+    
+}
+.frame {
+    grid-row: 1;
+    background-color: red;
+}
+.nav div {
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+    border-radius: 25px;
+} 
+.nav {
+    width: 30px;
+    display: block;
+    margin: 1em 0 0 1em;
+}
+.one {
+    width: 30px;
+}
+.two {
+    width: 20px;
+    transition: all 0.3s;
+}
+.three {
+    width: 25px;
+    transition: all 0.3s;
+}
+.nav:hover .two, .nav:hover .three{
+    width: 30px;
+    transition: all 0.3s;
+}
+.dd {
+    margin: 20px;
+    display: none;
+    width: 300px;
+    overflow: hidden
+}
+.dd div{
+    margin: 5px 0;
+}
+.item {
+    color: black;
+    text-decoration: none;
+}
+.item:hover{
+    text-decoration: underline;
+    background-color: white;
+}
+main {
+    margin: 20px;
+    
+    border: 1px solid red;
+    min-height: 50vh;
+    padding: 10px;
+    padding-top: 0;
+    
+}
+.greeting {
+    font-size: 3.6em;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.description {
+    display: none;
+}
+main h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+.signup {
+    
+    color: red;
+    text-decoration: none;
+}
+.signup:hover{
+    color: white;
+    background-color: red;
+}

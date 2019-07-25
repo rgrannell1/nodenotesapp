@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dashboard.css">
+    <link href="/welcome_large.css" rel="stylesheet" media="screen and (min-width: 800px)">
+    <link href="/welcome_small.css" rel="stylesheet" media="screen and (max-width: 800px)">
+    <script src="/jquery.js"></script>
+    <script src="/dashboard.js"></script>
+</head>
+<body>
+    <header>
+        
+        <div class="nav-wrapper">
+                <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                    <div class="dd">
+                        <% if (user) { %>
+                        <div ><a class="item" href="/users/profilesettings">Profile settings</a></div>
+                        <div ><a class="item" href="/users/logout">Logout</a></div>
+                        <% } else { %>
+                        <div ><a class="item" href="/users/login">Login</a></div>
+                        <div ><a class="item" href="/about">About</a></div>
+                        <%  } %>
+                    </div>
+        </div>
+        <div class="frame">
+                <h1 id="logo">Notes</h1>
+        </div>
+        
+    </header>
+    <main>
+        <h1 class="greeting">This is a <span style="color: red">note taking</span> app.</h1>
+        <p class="description">I created it to get more experience with Node.js and its workflow.
+            I hope one day I'll get it to do as much as a basic note taking application.
+            Tell your parents you love them the next time you talk.
+        </p>
+        <h3 >I suggest you <a class="signup" href="/users/signup">sign up</a>, it will only take a few seconds.</h3>
+        
+    </main>
+</body>
+</html>

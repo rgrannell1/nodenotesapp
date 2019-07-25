@@ -1,0 +1,23 @@
+<style>
+  .err {
+    color: red;
+    margin: 5px 0;
+  }
+</style>
+<% if (typeof errors != 'undefined') { %>
+  <% errors.forEach(function(err) { %>
+    <p class="err"><%= err.msg %></p>
+  <% }); %>
+<% } %>
+
+<% if(success_msg != '') { %>
+  <p style="color: white; background-color: green"><%= success_msg %></p>
+<% } %>
+
+<% if(error_msg != '') { %>
+  <p style="color: white; background-color: red;"><%= error_msg %></p>
+<% } %>
+
+<% if(error != '') { %>
+  <p style="color: white; background-color: red;"><%= error %></p>
+<% } %>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Forgotten password</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/login.css">
+
+  
+</head>
+
+<body>
+
+  <div class="user">
+    <header class="user__header">
+        <a class="logo" href="/">Notes</a>
+      <% include ./partials/messages %>
+    </header>
+    
+    <form action="/users/forgot" method="POST" class="form">
+        
+        <div class="form__group">
+            <input type="email" name="email" placeholder="Email" class="form__input" required />
+        </div>
+        
+        <button class="btn" type="submit">Send new password</button>
+		
+    </form>
+  <p class="login"><a href="/users/login">Go Back</a></p>
+</div>
+  
+
+    <script  src="/login.js"></script>
+
+
+</body>
+
+</html>
+

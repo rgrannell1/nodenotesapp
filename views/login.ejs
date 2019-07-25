@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/login.css">
+
+  
+</head>
+
+<body>
+
+  <div class="user">
+    <header class="user__header">
+      <a class="logo" href="/">Notes</a>
+      <div class="errors">
+      <% include ./partials/messages %>
+      </div>
+    </header>
+    
+    <form action="/users/login" method="POST" class="form">
+        
+        <div class="form__group">
+            <input type="email" name="email" placeholder="Email" class="form__input"
+            value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        
+        <div class="form__group">
+            <input type="password" name="password" placeholder="Password" class="form__input"
+            value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        
+        <button class="btn" type="submit">Login</button>
+		
+    </form>
+  <p class="login">No Account Yet? <a href="/users/signup">Sign Up</a></p>
+  <p class="login"><a href="/users/forgot">I forgot my password</a></p>
+</div>
+  
+
+    <script  src="/login.js"></script>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,125 @@
+body {
+    font-family: Varela, Arial, Helvetica, sans-serif;
+    margin: 0;
+    
+}
+header {
+    display: grid;
+            
+}
+.nav-wrapper{
+    grid-row: 2;
+    margin-top: -50px;
+    z-index: 2;
+    border-bottom: 1px solid red;
+}
+#logo {
+    text-align: center;
+    margin: 10px;
+    color: black;
+    text-decoration: none;
+}
+.frame {
+    grid-row: 1;
+    background-color: red;
+}
+.frame a {
+    text-decoration: none;
+}
+.nav div {
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+    border-radius: 25px;
+} 
+.nav {
+    width: 30px;
+    display: block;
+    margin: 1em 0 0 1em;
+}
+.one {
+    width: 30px;
+}
+.two {
+    width: 20px;
+    transition: all 0.3s;
+}
+.three {
+    width: 25px;
+    transition: all 0.3s;
+}
+.nav:hover .two, .nav:hover .three{
+    width: 30px;
+    transition: all 0.3s;
+}
+.dd {
+    margin: 20px;
+    display: none;
+    width: 300px;
+    overflow: hidden
+}
+.dd div{
+    margin: 5px 0;
+}
+.item {
+    color: black;
+    text-decoration: none;
+}
+.item:hover{
+    text-decoration: underline;
+    
+}
+main {
+    padding-top: 25px;
+}
+.note {
+    padding: 0;
+    width: 90%;
+    display: block;
+    border: 1.5px solid black;
+    padding-bottom: 5px;
+    margin: 10px;
+    margin-left: 5%;
+}
+textarea {
+    resize: none;
+    width: 90%;
+    color: black;
+    padding: 13px;
+    padding-bottom: 0;
+    font-size: 1.2em;
+    display: block;
+    overflow: auto;
+    border: 0;
+    background-color: transparent;
+    
+}
+textarea:focus{
+    outline: 0;
+}
+.options {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    color: grey;
+    display: block;
+    text-align: right;
+    margin-right: 3px;
+}
+.options a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.viewnote {
+    padding: 10px 20px;
+    display: block;
+    border: 1.5px solid black;
+    margin: 10px;
+}
+.viewinfo{
+    font-size: smaller;
+    color: grey;
+    font-family: 'Courier New', Courier, monospace;
+}
+.viewnote p {
+    font-family: 'Courier New', Courier, monospace;
+}

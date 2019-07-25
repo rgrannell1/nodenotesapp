@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dashboard.css">
+    <link href="/dashboard_large.css" rel="stylesheet" media="screen and (min-width: 800px)">
+    <link href="/dashboard_small.css" rel="stylesheet" media="screen and (max-width: 800px)">
+    <script src="/jquery.js"></script>
+    <script src="/autosize.js"></script>
+    <script src="/dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-wrapper">
+                <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                    <div class="dd">
+                        <div ><a class="item" href="/users/profilesettings">Profile settings</a></div>
+                        <div ><a class="item" href="/users/logout">Logout</a></div>
+                    </div>
+        </div>
+        <div class="frame">
+                <a href="/"><h1 id="logo">Notes</h1></a>
+        </div>
+        
+    </header>
+    <main id="main">
+        <div class="note">
+            <textarea onblur="blurred(this)" onkeyup="updateTextArea(this)" id="creator" class="text" placeholder="Start typing your note..."></textarea>
+            <span class="options"></span>
+        </div>
+        <% if (notes) { %>
+        <% notes.forEach(item => { %>
+        <div class="note" >
+            <textarea onblur="blurred(this)" onkeyup="updateTextArea(this)" id="<%= item._id %>" class="text"><%= item.content %></textarea>
+            <span class="options"><a onclick="share(this)">share</a> | <a onclick="deleteNote(this)">delete</a> | <a onclick="info(this)">info</a></span>
+        </div>
+        <% }); %>
+        <% } %>
+
+    </main>
+    <input type="hidden" value="<%= user._id %>" id="x">
+</body>
+</html>

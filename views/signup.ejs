@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/login.css">
+
+  
+</head>
+
+<body>
+
+  <div class="user">
+    <header class="user__header">
+        <a class="logo" href="/">Notes</a>
+      <% include ./partials/messages %>
+    </header>
+    
+    <form action="/users/signup" method="POST" class="form">
+        <div class="form__group">
+            <input type="text" name="name" placeholder="Username" class="form__input" 
+            value="<%= typeof name != 'undefined' ? name : '' %>" />
+        </div>
+        
+        <div class="form__group">
+            <input type="email" name="email" placeholder="Email" class="form__input"
+            value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        
+        <div class="form__group">
+            <input type="password" name="password" placeholder="Password" class="form__input"
+            value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+		<div class="form__group">
+            <input type="password" name="password2" placeholder="Confirm password" class="form__input" 
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+        </div>
+        
+        <button class="btn" type="submit">Sign Up</button>
+		
+    </form>
+	<p class="login">Have An Account? <a href="/users/login">Login</a></p>
+</div>
+  
+
+    <script  src="/login.js"></script>
+
+
+</body>
+
+</html>
+

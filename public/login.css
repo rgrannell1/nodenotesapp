@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Varela, Helvetica, sans-serif;
+  font-size: 14px;
+  background-size: 200% 100% !important;
+  height: 100vh;
+}
+
+.user {
+  width: 90%;
+  max-width: 340px;
+  margin: 10vh auto;
+  
+}
+
+.user__header {
+  text-align: center;
+}
+.login{
+		text-align: center;
+		margin-top: 50px;
+		color: black;
+}
+.login a{
+	color: red;
+	text-decoration: none;
+}
+.login a:hover {
+	text-decoration: underline;
+}
+.user__title {
+  font-size: 14px;
+  margin-bottom: -10px;
+  font-weight: 500;
+  color: white;
+}
+
+.form {
+  margin-top: 40px;
+  overflow: hidden;
+  padding: 10px;
+  
+}
+
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  -webkit-appearance: none;
+  border: 2px solid black;
+  outline: 0;
+  font-family: Varela;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  -webkit-appearance: none;
+  outline: 0;
+  border: 2px solid black;
+  color: white;
+  background-color: red;
+  font-family: Varela;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing:0.3ch;
+}
+.btn:hover {
+  background-color: white;
+  color: red;
+}
+.logo {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: Varela;
+  background-color: red;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+.errors {
+  margin-top: 30px;
+}
+
