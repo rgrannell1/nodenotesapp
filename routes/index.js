@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/userController')
 const verifController = require('../controllers/verifController')
+const auth = require('../shared/auth')
 
 const User = require('../models/User')
 const Note = require('../models/Note')
@@ -11,19 +12,10 @@ router.get('/welcome', (req, res) => {
   res.render('welcome', { user: req.user })
 })
 
-const ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next() // middleware says ok
-  }
-  // middleware redirects to homepage
-  // req.flash('error_msg', 'Please log in to view this resource');
-  res.redirect('/welcome')
-}
-
 // dashboard
 // using ensureAuthenticated from auth configuration file
 // no auth -> no req.user
-router.get('/', ensureAuthenticated, async (req, res) => {
+router.get('/', auth.ensureAuthenticated, async (req, res) => {
   verifController(req.user)
   const notes = await Note.find({ user: req.user._id }).sort({ edited: -1 })
   res.render('dashboard', {

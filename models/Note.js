@@ -1,4 +1,5 @@
 // MongoDB Note Model, nothing much to see here
+'use strict'
 
 const mongoose = require('mongoose')
 
