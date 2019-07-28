@@ -7,13 +7,13 @@ const session = require('express-session');
 const passport = require('passport');
 const mongooseURI = require('./config/sensitive').mongooseURI;
 //connecting to database
-mongoose.connect(mongooseURI, { useNewUrlParser: true})
-  .then(() => console.log("MongoDB connected..."))
-  .catch(err => console.log(err));
 
+async function startMongoose () {
+  return mongoose.connect(mongooseURI, { useNewUrlParser: true})
+}
 
 //launching express
-var app = express();
+const app = express();
 
 //static files
 app.use(express.static('public'));
@@ -44,18 +44,31 @@ app.use(passport.session());
 app.use(flash());
 
 //global vars - used by connect-flash
-app.use((req,res,next) =>{
+app.use((req, res, next) =>{
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error'); //used by passport as default
   next(); //moving on
 });
 
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 //routing
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
-//launching server
-app.listen(PORT, console.log('server started..'));
+async function main () {
+  await startMongoose();
+  console.log('mongoose started.');
+
+  await new Promise((resolve, reject) => {
+    app.listen(PORT, () => {
+      console.log(`listening on port ${PORT}`);
+      resolve();
+    });
+  });
+
+
+}
+
+main();
