@@ -1,6 +1,6 @@
-//MongoDB Note Model, nothing much to see here
+// MongoDB Note Model, nothing much to see here
 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const NoteSchema = new mongoose.Schema({
   user: {
@@ -22,8 +22,8 @@ const NoteSchema = new mongoose.Schema({
     required: true,
     default: ''
   }
-});
+})
 
-const Note = mongoose.model('Note', NoteSchema);
+const Note = mongoose.model('Note', NoteSchema)
 
-module.exports = Note;
+module.exports = Note

@@ -1,2 +1,2 @@
 const button = document.querySelector('.btn')
-const form   = document.querySelector('.form')
+const form = document.querySelector('.form')
